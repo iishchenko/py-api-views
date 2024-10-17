@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import GenreAPIView, \
+from cinema.views import GenreAPIView, \
     ActorListCreateView, ActorDetailView, CinemaHallViewSet, MovieViewSet
 
 app_name = "cinema"  # Set the app_name here

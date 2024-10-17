@@ -1,6 +1,7 @@
-from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.response import Response
 from rest_framework import status
+from rest_framework import mixins
 from cinema.models import Genre, Actor, CinemaHall, Movie
 from cinema.serializers import GenreSerializer, ActorSerializer, \
     CinemaHallSerializer, MovieSerializer
@@ -33,7 +34,8 @@ class ActorDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = ActorSerializer
 
 
-class CinemaHallViewSet(viewsets.ModelViewSet):
+class CinemaHallViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.CreateModelMixin,
+                        mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
     queryset = CinemaHall.objects.all()
     serializer_class = CinemaHallSerializer
 
