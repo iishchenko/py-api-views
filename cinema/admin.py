@@ -5,4 +5,3 @@ admin.site.register(Actor)
 admin.site.register(Genre)
 admin.site.register(CinemaHall)
 admin.site.register(Movie)
-
